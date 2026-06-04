@@ -1,0 +1,37 @@
+SITE RGA TECH SOLUTIONS — ESTRUTURA
+===================================
+
+/index.html                      -> página principal
+/segmentos/clinicas/index.html   -> /segmentos/clinicas
+/segmentos/restaurantes/...      -> /segmentos/restaurantes
+/segmentos/lojas/...             -> /segmentos/lojas
+/segmentos/mercados/...          -> /segmentos/mercados
+/segmentos/oficinas/...          -> /segmentos/oficinas
+/segmentos/borracharias/...      -> /segmentos/borracharias
+/segmentos/servicos/...          -> /segmentos/servicos
+/img/<segmento>/                 -> fotos de cada página (veja o .txt dentro)
+
+COMO AS FOTOS FUNCIONAM
+- Cada seção já tem um espaço de imagem com legenda do que colocar.
+- Basta salvar a foto no caminho indicado (ex.: /img/clinicas/1.jpg e /img/clinicas/hero.jpg).
+- A foto aparece sozinha; sem foto, fica um placeholder elegante.
+- Onde achar fotos GRÁTIS e liberadas: unsplash.com, pexels.com, freepik.com (verifique a licença).
+
+HOSPEDAGEM (para as URLs ficarem /segmentos/clinicas)
+- Suba a pasta inteira em: Netlify, Vercel, GitHub Pages ou hospedagem cPanel.
+- Esses serviços abrem automaticamente o index.html de cada pasta -> URL limpa.
+
+TESTAR NO COMPUTADOR (rápido)
+- Abra o terminal nesta pasta e rode:  python -m http.server
+- Depois acesse:  http://localhost:8000
+  (Abrir o index.html direto com 2 cliques também funciona, mas os links de pasta
+   só ficam 100% quando hospedado ou via servidor local.)
+
+CONTATOS JÁ CONFIGURADOS
+- WhatsApp/Telefone: (79) 99835-8788
+- E-mail do formulário: gomes.renan549@gmail.com  (ative na 1ª vez — veja abaixo)
+- Instagram e LinkedIn: já apontando para seus perfis
+
+FORMULÁRIO -> E-MAIL
+- Use o site uma vez, envie o formulário e confirme o e-mail que a FormSubmit enviar.
+- Depois disso, todos os pedidos chegam no seu Gmail automaticamente.

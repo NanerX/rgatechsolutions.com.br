@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<title>Sistema para Restaurante e Lanchonete | RGA Tech Solutions</title>
+<meta name="description" content="Demonstração do sistema para restaurantes: pedidos por mesa, painel da cozinha, cardápio digital e delivery.">
+<meta name="keywords" content="sistema para restaurante, comanda eletrônica, cardápio digital, delivery">
+<meta property="og:title" content="Sistema para Restaurante e Lanchonete | RGA Tech Solutions">
+<meta property="og:description" content="Demonstração do sistema para restaurantes: pedidos por mesa, painel da cozinha, cardápio digital e delivery.">
+<meta property="og:locale" content="pt_BR">
+<link rel="canonical" href="/segmentos/restaurantes/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy-900:#060d1c;--navy-850:#0a1426;--navy-800:#0b1a30;--navy-700:#0e2038;
+  --blue:#2f6bff;--green:#00e599;--green-deep:#03b277;
+  --bg:#f3f6fb;--card:#ffffff;--line:#e7ecf4;--line2:#eef2f8;
+  --ink:#0c1626;--ink2:#3a475d;--muted:#6a7892;--muted2:#9aa7bd;
+  --sb-text:#aebaceff;
+  --pill-green-b:#e3faf1;--pill-green-t:#03875a;
+  --pill-amber-b:#fff3e0;--pill-amber-t:#b9690a;
+  --pill-blue-b:#e7efff;--pill-blue-t:#1f53d6;
+  --pill-gray-b:#eef1f6;--pill-gray-t:#5a6a86;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Sora',sans-serif;letter-spacing:-.02em;line-height:1.12}
+a{color:inherit;text-decoration:none}
+svg{display:block}
+.mono{font-family:'JetBrains Mono',monospace}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Sora',sans-serif;font-weight:600;font-size:.88rem;padding:10px 18px;border-radius:10px;transition:transform .18s,box-shadow .18s,background .18s,border-color .18s;white-space:nowrap}
+.btn svg{width:16px;height:16px}
+.btn-green{background:var(--green);color:#06231a;box-shadow:0 10px 22px -10px rgba(0,229,153,.7)}
+.btn-green:hover{transform:translateY(-2px);box-shadow:0 16px 30px -12px rgba(0,229,153,.8)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{transform:translateY(-2px)}
+.btn-outline{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--sb-text);border:1px solid rgba(255,255,255,.12)}
+.btn-ghost:hover{background:rgba(255,255,255,.08);color:#fff}
+.btn-sm{padding:8px 13px;font-size:.8rem}
+
+/* ---------- logo ---------- */
+.logo{display:flex;align-items:center;gap:11px}
+.logo-mark{width:38px;height:38px;flex-shrink:0;border-radius:10px;overflow:hidden;box-shadow:0 6px 16px -6px rgba(47,107,255,.6)}
+.logo-name b{font-family:'Sora';font-weight:800;font-size:1.02rem;line-height:1;display:block;letter-spacing:-.02em}
+.logo-name b .t{color:var(--blue)}
+.logo-name small{font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--green);font-family:'JetBrains Mono'}
+
+/* =========================================================
+   HOME (launcher)
+========================================================= */
+#home{min-height:100vh;background:var(--navy-850);color:#fff;position:relative;overflow:hidden;display:none;flex-direction:column}
+#home.active{display:flex}
+#home::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(820px 520px at 82% 6%,rgba(47,107,255,.26),transparent 60%),
+  radial-gradient(720px 600px at 8% 96%,rgba(0,229,153,.13),transparent 60%);}
+.home-grid-tex{position:absolute;inset:0;opacity:.5;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(circle at 50% 30%,#000,transparent 80%)}
+.home-top{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:22px 5vw}
+.home-top .logo-name b{color:#fff}
+.online{display:inline-flex;align-items:center;gap:8px;font-size:.74rem;font-family:'JetBrains Mono';color:var(--green);background:rgba(0,229,153,.1);border:1px solid rgba(0,229,153,.3);padding:6px 13px;border-radius:30px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(0,229,153,.6);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(0,229,153,.5)}70%{box-shadow:0 0 0 8px rgba(0,229,153,0)}100%{box-shadow:0 0 0 0 rgba(0,229,153,0)}}
+.home-hero{position:relative;z-index:2;text-align:center;padding:26px 5vw 6px}
+.home-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono';font-size:.76rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:16px}
+.home-hero h1{font-size:clamp(2rem,4.6vw,3.4rem);font-weight:800;margin-bottom:16px}
+.home-hero h1 .hl{background:linear-gradient(120deg,var(--green),#7af5cf);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.home-hero p{color:rgba(255,255,255,.72);font-size:1.08rem;max-width:620px;margin:0 auto 8px}
+.home-sub{color:var(--muted2)!important;font-size:.92rem!important;font-family:'JetBrains Mono'}
+.modules{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:38px 24px 30px;width:100%;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.mod-card{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:22px;text-align:left;color:#fff;cursor:pointer;transition:transform .22s,border-color .22s,background .22s,box-shadow .22s;position:relative;overflow:hidden}
+.mod-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:var(--acc);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.mod-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.07);border-color:rgba(0,229,153,.4);box-shadow:0 26px 50px -28px rgba(0,0,0,.7)}
+.mod-card:hover::before{transform:scaleX(1)}
+.mod-ico{width:50px;height:50px;border-radius:13px;display:grid;place-items:center;margin-bottom:16px;background:color-mix(in srgb,var(--acc) 18%,transparent);color:var(--acc)}
+.mod-ico svg{width:26px;height:26px}
+.mod-card h3{font-size:1.12rem;margin-bottom:7px}
+.mod-card p{color:rgba(255,255,255,.6);font-size:.85rem;margin-bottom:16px;min-height:38px}
+.mod-open{display:inline-flex;align-items:center;gap:7px;color:var(--acc);font-family:'Sora';font-weight:600;font-size:.85rem;transition:gap .2s}
+.mod-open svg{width:15px;height:15px}
+.mod-card:hover .mod-open{gap:12px}
+.home-foot{position:relative;z-index:2;text-align:center;padding:14px 24px 26px;color:var(--muted2);font-size:.82rem}
+.home-foot a{color:var(--green)}
+
+/* =========================================================
+   APP SHELL (module pages)
+========================================================= */
+#app{display:none;min-height:100vh}
+#app.active{display:grid;grid-template-columns:248px 1fr}
+.sidebar{background:linear-gradient(180deg,var(--navy-800),var(--navy-900));color:var(--sb-text);position:fixed;top:0;left:0;bottom:0;width:248px;display:flex;flex-direction:column;z-index:60;transition:transform .3s}
+.sb-logo{padding:20px 20px 16px;border-bottom:1px solid rgba(255,255,255,.07)}
+.sb-logo .logo-name b{color:#fff}
+.sb-badge{margin:14px 20px 6px;font-family:'JetBrains Mono';font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2)}
+.sb-nav{flex:1;overflow-y:auto;padding:4px 12px}
+.sb-item{display:flex;align-items:center;gap:12px;width:100%;padding:11px 13px;border-radius:10px;color:var(--sb-text);font-weight:600;font-size:.9rem;font-family:'Sora';text-align:left;margin-bottom:3px;transition:background .18s,color .18s;position:relative}
+.sb-item svg{width:18px;height:18px;flex-shrink:0;opacity:.9}
+.sb-item:hover{background:rgba(255,255,255,.05);color:#fff}
+.sb-item.on{background:color-mix(in srgb,var(--acc) 16%,transparent);color:#fff}
+.sb-item.on::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:3px;border-radius:3px;background:var(--acc)}
+.sb-item.on svg{color:var(--acc);opacity:1}
+.sb-foot{padding:14px 14px 16px;border-top:1px solid rgba(255,255,255,.07)}
+.sb-user{display:flex;align-items:center;gap:10px;padding:8px 6px 14px}
+.sb-ava{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--blue),var(--navy-700));display:grid;place-items:center;color:#fff;font-family:'Sora';font-weight:700;font-size:.85rem}
+.sb-user b{font-size:.82rem;color:#fff;font-family:'Sora';display:block;line-height:1.1}
+.sb-user span{font-size:.7rem;color:var(--muted2)}
+
+.main{grid-column:2;min-width:0;display:flex;flex-direction:column}
+.topbar{position:sticky;top:0;z-index:40;height:64px;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 26px;gap:16px}
+.tb-left{display:flex;align-items:center;gap:14px;min-width:0}
+.crumb{font-size:.82rem;color:var(--muted)}
+.crumb b{color:var(--ink);font-family:'Sora'}
+.crumb .acc{color:var(--acc-d)}
+.search{display:flex;align-items:center;gap:9px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 13px;color:var(--muted);font-size:.85rem;width:230px}
+.search svg{width:15px;height:15px}
+.search input{border:none;background:none;outline:none;font-family:inherit;font-size:.85rem;color:var(--ink);width:100%}
+.tb-right{display:flex;align-items:center;gap:12px}
+.iconbtn{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:var(--bg);border:1px solid var(--line);color:var(--ink2);position:relative;transition:.18s}
+.iconbtn:hover{border-color:var(--blue);color:var(--blue)}
+.iconbtn svg{width:18px;height:18px}
+.iconbtn .badge{position:absolute;top:-4px;right:-4px;width:16px;height:16px;border-radius:50%;background:var(--green);color:#06231a;font-size:.6rem;font-weight:700;display:grid;place-items:center;border:2px solid #fff}
+.menu-toggle{display:none}
+.tb-ava{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--blue),var(--navy-700));display:grid;place-items:center;color:#fff;font-family:'Sora';font-weight:700;font-size:.85rem}
+
+.content{padding:28px 26px 44px;max-width:1280px;width:100%}
+.page-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:24px}
+.page-head .mod-tag{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono';font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--acc-d);font-weight:600;margin-bottom:9px}
+.page-head h1{font-size:1.7rem;margin-bottom:6px}
+.page-head p{color:var(--muted);font-size:.96rem}
+.head-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+/* KPI */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:20px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px;box-shadow:0 10px 26px -22px rgba(12,22,45,.5)}
+.kpi .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.kpi .lbl{font-size:.78rem;color:var(--muted);font-weight:600}
+.kpi .kico{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:color-mix(in srgb,var(--acc) 14%,transparent);color:var(--acc-d)}
+.kpi .kico svg{width:18px;height:18px}
+.kpi .val{font-family:'Sora';font-size:1.7rem;font-weight:800;color:var(--ink);line-height:1}
+.kpi .delta{font-size:.76rem;font-weight:700;margin-top:8px;display:inline-flex;align-items:center;gap:4px}
+.kpi .delta.up{color:var(--green-deep)}
+.kpi .delta.down{color:#d6453d}
+
+/* two-col */
+.row2{display:grid;grid-template-columns:1.6fr 1fr;gap:16px;margin-bottom:20px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:0 10px 26px -22px rgba(12,22,45,.5)}
+.panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.panel-head h3{font-size:1.05rem}
+.panel-head .legend{font-size:.74rem;color:var(--muted);display:flex;align-items:center;gap:7px}
+.panel-head .legend i{width:9px;height:9px;border-radius:3px;background:var(--acc);display:inline-block}
+.summary-item{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line2)}
+.summary-item:last-child{border-bottom:none}
+.summary-item .si-ic{width:34px;height:34px;border-radius:9px;background:color-mix(in srgb,var(--acc) 13%,transparent);color:var(--acc-d);display:grid;place-items:center;flex-shrink:0}
+.summary-item .si-ic svg{width:16px;height:16px}
+.summary-item b{font-size:.86rem;font-family:'Sora';display:block;line-height:1.2}
+.summary-item span{font-size:.76rem;color:var(--muted)}
+.summary-item .pill{margin-left:auto}
+
+/* table */
+.table-card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 26px -22px rgba(12,22,45,.5);overflow:hidden}
+.tc-head{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--line)}
+.tc-head h3{font-size:1.05rem}
+.tc-head .tools{display:flex;gap:9px;align-items:center}
+.chip{font-size:.76rem;color:var(--muted);background:var(--bg);border:1px solid var(--line);padding:6px 11px;border-radius:8px;font-weight:600}
+.table-scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:560px}
+th{text-align:left;font-family:'Sora';font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted2);font-weight:600;padding:13px 20px;background:var(--line2)}
+td{padding:14px 20px;font-size:.88rem;color:var(--ink2);border-bottom:1px solid var(--line2)}
+tbody tr{transition:background .15s}
+tbody tr:hover{background:var(--bg)}
+tbody tr:last-child td{border-bottom:none}
+td .strong{color:var(--ink);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;font-weight:700;padding:4px 10px;border-radius:20px}
+.pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.pill.green{background:var(--pill-green-b);color:var(--pill-green-t)}
+.pill.amber{background:var(--pill-amber-b);color:var(--pill-amber-t)}
+.pill.blue{background:var(--pill-blue-b);color:var(--pill-blue-t)}
+.pill.gray{background:var(--pill-gray-b);color:var(--pill-gray-t)}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(80px);background:var(--navy-800);color:#fff;border:1px solid rgba(0,229,153,.4);border-radius:12px;padding:13px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 20px 50px -16px rgba(0,0,0,.6);z-index:200;opacity:0;transition:transform .35s,opacity .35s;max-width:90vw}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+.toast svg{width:20px;height:20px;color:var(--green);flex-shrink:0}
+.toast b{font-family:'Sora';font-size:.9rem}
+.toast span{font-size:.8rem;color:var(--muted2);display:block}
+.toast .toast-cta{margin-left:6px;background:var(--green);color:#06231a;font-family:'Sora';font-weight:700;font-size:.78rem;padding:7px 12px;border-radius:8px}
+
+.overlay{display:none;position:fixed;inset:0;background:rgba(6,13,28,.5);z-index:55}
+.overlay.show{display:block}
+
+/* ---------- responsive ---------- */
+@media(max-width:1024px){ .modules{grid-template-columns:repeat(3,1fr)} }
+@media(max-width:900px){
+  #app.active{grid-template-columns:1fr}
+  .sidebar{transform:translateX(-100%)}
+  .sidebar.open{transform:translateX(0)}
+  .main{grid-column:1}
+  .menu-toggle{display:grid}
+  .search{display:none}
+  .row2{grid-template-columns:1fr}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .modules{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  .kpis{grid-template-columns:1fr 1fr}
+  .modules{grid-template-columns:1fr}
+  .home-top{padding:18px 22px}
+  .tb-right .demo-text{display:none}
+  .content{padding:20px 16px 40px}
+}
+
+.erp{display:grid;grid-template-columns:248px 1fr;min-height:100vh}
+.tb-left .btn{flex-shrink:0}
+@media(max-width:900px){.erp{grid-template-columns:1fr}}
+@media(max-width:560px){.crumb{display:none}.backtxt{display:none}}
+</style>
+</head>
+<body>
+<div class="erp">
+  <aside class="sidebar" id="sidebar">
+    <div class="sb-logo"><div class="logo"><span class="logo-mark" id="sbLogo"></span><div class="logo-name"><b>RGA <span class="t">ERP</span></b><small>Solutions</small></div></div></div>
+    <div class="sb-badge" id="sbBadge">MÓDULO</div>
+    <nav class="sb-nav" id="sbNav"></nav>
+    <div class="sb-foot">
+      <a class="btn btn-ghost btn-sm" href="../../index.html" style="width:100%;justify-content:center">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Voltar ao site principal
+      </a>
+      <div class="sb-user"><div class="sb-ava">RG</div><div><b>Renan Gomes</b><span>Administrador</span></div></div>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+  <div class="main">
+    <header class="topbar">
+      <div class="tb-left">
+        <button class="iconbtn menu-toggle" onclick="openSidebar()" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+        <a class="btn btn-outline btn-sm" href="../../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg><span class="backtxt">Site principal</span></a>
+        <div class="crumb" id="crumb"></div>
+      </div>
+      <div class="tb-right">
+        <a class="btn btn-outline btn-sm wa-link" href="#"><svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2z"/></svg><span class="demo-text">Falar no WhatsApp</span></a>
+        <button class="btn btn-green btn-sm demo-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3l14 9-14 9V3z"/></svg><span class="demo-text">Solicitar Demonstração</span></button>
+        <div class="tb-ava">RG</div>
+      </div>
+    </header>
+    <main class="content" id="content"></main>
+  </div>
+</div>
+<div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg><div><b id="toastTitle">Pronto</b><span id="toastMsg"></span></div></div>
+<script>
+const WA="5579998358788";
+function waUrl(ctx){return "https://wa.me/"+WA+"?text="+encodeURIComponent("Olá! Vim pela demonstração do sistema RGA ERP"+(ctx?(" — módulo "+ctx):"")+" e gostaria de solicitar uma demonstração.");}
+
+/* ---------- icons ---------- */
+const I={
+ clinic:'<path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+ rest:'<path d="M4 3v6a2 2 0 002 2v10"/><path d="M8 3v8"/><path d="M16 3c-1.5 0-3 1.5-3 5s1.5 5 3 5v8"/>',
+ shop:'<circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>',
+ market:'<path d="M5 8l1-4h12l1 4"/><path d="M4 8h16l-1 11a2 2 0 01-2 2H7a2 2 0 01-2-2z"/><path d="M9 12v4M15 12v4"/>',
+ oficina:'<path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>',
+ tire:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.4"/>',
+ serv:'<path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>',
+ calendar:'<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>',
+ users:'<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/>',
+ file:'<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/>',
+ list:'<line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><circle cx="3.5" cy="6" r="1.4"/><circle cx="3.5" cy="12" r="1.4"/><circle cx="3.5" cy="18" r="1.4"/>',
+ wallet:'<path d="M21 12V7H5a2 2 0 010-4h14v4"/><path d="M3 5v14a2 2 0 002 2h16v-5"/><path d="M18 12a2 2 0 000 4h4v-4z"/>',
+ monitor:'<rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>',
+ box:'<path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><path d="M3.27 6.96L12 12l8.73-5.04"/><line x1="12" y1="22" x2="12" y2="12"/>',
+ truck:'<rect x="1" y="4" width="14" height="12" rx="1"/><path d="M15 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="17.5" cy="18.5" r="2"/>',
+ clock:'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+ car:'<path d="M5 17H3v-5l2-5h14l2 5v5h-2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/>',
+ gear:'<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.6 1.6 0 00-2.7 1.1V21a2 2 0 01-4 0a1.6 1.6 0 00-2.7-1.1l-.1.1a2 2 0 11-2.8-2.8l.1-.1A1.6 1.6 0 004 15H3a2 2 0 010-4a1.6 1.6 0 001.1-2.7l-.1-.1a2 2 0 112.8-2.8l.1.1A1.6 1.6 0 009 6V5a2 2 0 014 0a1.6 1.6 0 002.7 1.1l.1-.1a2 2 0 112.8 2.8l-.1.1A1.6 1.6 0 0020 11h1a2 2 0 010 4z"/>',
+ history:'<path d="M3 3v5h5"/><path d="M3.05 13A9 9 0 106 5.3L3 8"/><polyline points="12 7 12 12 15 14"/>',
+ chart:'<path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/>',
+ cart:'<circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>',
+ card:'<rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/>',
+ plus:'<line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>',
+ eye:'<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/>',
+ cash:'<rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/>',
+ pkg:'<path d="M16 16l-4 2-4-2"/><path d="M12 12v6"/><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8"/>',
+};
+function ico(n,style=""){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '+style+'>'+(I[n]||'')+'</svg>';}
+
+/* logo mark (inline svg) */
+function logoMark(sfx){return '<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">'+
+ '<defs><linearGradient id="lg'+sfx+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0E2038"/><stop offset=".55" stop-color="#13294B"/><stop offset="1" stop-color="#0A1628"/></linearGradient>'+
+ '<radialGradient id="lr'+sfx+'" cx=".8" cy=".18" r=".7"><stop offset="0" stop-color="#00E599" stop-opacity=".55"/><stop offset=".55" stop-color="#00E599" stop-opacity="0"/></radialGradient></defs>'+
+ '<rect width="120" height="120" rx="30" fill="url(#lg'+sfx+')"/><rect width="120" height="120" rx="30" fill="url(#lr'+sfx+')"/>'+
+ '<rect x=".6" y=".6" width="118.8" height="118.8" rx="29.4" fill="none" stroke="#fff" stroke-opacity=".1" stroke-width="1.2"/>'+
+ '<text x="60" y="82" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="74" fill="#fff">R</text>'+
+ '<circle cx="90" cy="90" r="5.4" fill="#00E599"/><circle cx="72" cy="99" r="3.2" fill="#00E599" fill-opacity=".55"/><line x1="72" y1="99" x2="90" y2="90" stroke="#00E599" stroke-width="1.6" stroke-opacity=".5"/></svg>';}
+
+/* ---------- helpers for table cells ---------- */
+function P(tone,txt){return {pill:tone,v:txt};}
+
+/* =========================================================
+   DADOS DOS MÓDULOS
+========================================================= */
+const MOD={
+clinicas:{name:"Clínicas e Consultórios",short:"Agenda, prontuário, recepção e financeiro.",icon:"clinic",acc:"#00C9A7",accD:"#04937c",
+ actions:[{l:"Nova consulta",p:true,ic:"plus"},{l:"Ver agenda",ic:"calendar"}],
+ kpis:[["Consultas hoje","28","calendar","+12%"],["Pacientes ativos","1.243","users","+4%"],["Faturamento (mês)","R$ 86.4k","wallet","+18%"],["Ocupação da agenda","92%","chart","+6%"]],
+ chart:{title:"Consultas por dia",labels:["Seg","Ter","Qua","Qui","Sex","Sáb","Dom"],values:[18,24,22,30,27,15,8]},
+ summary:{title:"Próximos atendimentos",items:[["09:00 — Maria Souza","Dra. Helena • Clínico","green","Confirmado"],["09:30 — João Lima","Dr. Marcos • Retorno","amber","Aguardando"],["10:00 — Ana Reis","Dra. Paula • Exame","green","Confirmado"],["10:30 — Pedro Alves","Dr. Marcos • Consulta","gray","Agendado"]]},
+ tabs:[
+  {id:"agenda",l:"Agenda médica",ic:"calendar",title:"Agenda médica",sub:"Atendimentos de hoje",cols:["Horário","Paciente","Profissional","Tipo","Status"],rows:[
+    ["08:30",{strong:"Maria Souza"},"Dra. Helena","Consulta",P("green","Confirmado")],
+    ["09:00",{strong:"João Lima"},"Dr. Marcos","Retorno",P("amber","Aguardando")],
+    ["09:30",{strong:"Ana Reis"},"Dra. Paula","Exame",P("green","Confirmado")],
+    ["10:00",{strong:"Pedro Alves"},"Dr. Marcos","Consulta",P("blue","Em atendimento")],
+    ["10:30",{strong:"Lúcia Dias"},"Dra. Helena","Retorno",P("gray","Agendado")]]},
+  {id:"pacientes",l:"Pacientes",ic:"users",title:"Pacientes",sub:"Base de pacientes cadastrados",cols:["Nome","Telefone","Última visita","Convênio","Status"],rows:[
+    [{strong:"Maria Souza"},"(79) 99812-3344","12/05/2026","Unimed",P("green","Ativo")],
+    [{strong:"João Lima"},"(79) 99654-1122","28/04/2026","Particular",P("green","Ativo")],
+    [{strong:"Ana Reis"},"(79) 99988-7766","02/03/2026","Bradesco",P("gray","Inativo")],
+    [{strong:"Pedro Alves"},"(79) 99777-0099","19/05/2026","Particular",P("green","Ativo")],
+    [{strong:"Carla Nunes"},"(79) 99321-4455","21/05/2026","Amil",P("green","Ativo")]]},
+  {id:"prontuarios",l:"Prontuário eletrônico",ic:"file",title:"Prontuário eletrônico",sub:"Últimos registros clínicos",cols:["Paciente","Data","Profissional","Resumo","Status"],rows:[
+    [{strong:"Maria Souza"},"12/05/2026","Dra. Helena","Avaliação de rotina",P("green","Concluído")],
+    [{strong:"Pedro Alves"},"19/05/2026","Dr. Marcos","Solicitação de exames",P("amber","Em aberto")],
+    [{strong:"Carla Nunes"},"21/05/2026","Dra. Paula","Retorno cardiológico",P("green","Concluído")],
+    [{strong:"João Lima"},"28/04/2026","Dr. Marcos","Prescrição atualizada",P("green","Concluído")],
+    [{strong:"Ana Reis"},"02/03/2026","Dra. Helena","Primeira consulta",P("green","Concluído")]]},
+  {id:"fila",l:"Fila de atendimento",ic:"list",title:"Fila de atendimento",sub:"Painel de senhas em tempo real",cols:["Senha","Paciente","Espera","Sala","Status"],rows:[
+    [{strong:"A012"},"Pedro Alves","00:04","Sala 02",P("blue","Chamando")],
+    [{strong:"A013"},"Lúcia Dias","00:09","—",P("amber","Aguardando")],
+    [{strong:"A014"},"Roberto Sá","00:12","—",P("amber","Aguardando")],
+    [{strong:"A011"},"Ana Reis","—","Sala 01",P("green","Em atendimento")],
+    [{strong:"A010"},"Maria Souza","—","Sala 01",P("gray","Finalizado")]]},
+  {id:"financeiro",l:"Financeiro",ic:"wallet",title:"Financeiro",sub:"Recebimentos do mês",cols:["Data","Paciente","Procedimento","Valor","Status"],rows:[
+    ["21/05/2026",{strong:"Carla Nunes"},"Consulta","R$ 250,00",P("green","Pago")],
+    ["21/05/2026",{strong:"Roberto Sá"},"Exame","R$ 180,00",P("amber","Pendente")],
+    ["20/05/2026",{strong:"Pedro Alves"},"Retorno","R$ 0,00",P("gray","Cortesia")],
+    ["19/05/2026",{strong:"Maria Souza"},"Consulta","R$ 250,00",P("green","Pago")],
+    ["19/05/2026",{strong:"João Lima"},"Procedimento","R$ 420,00",P("green","Pago")]]}]
+},
+
+restaurantes:{name:"Restaurantes e Lanchonetes",short:"Pedidos, cozinha, cardápio e delivery.",icon:"rest",acc:"#FF8A4C",accD:"#d8631f",
+ actions:[{l:"Novo pedido",p:true,ic:"plus"},{l:"Ver cozinha",ic:"monitor"}],
+ kpis:[["Pedidos hoje","134","list","+9%"],["Ticket médio","R$ 48,90","wallet","+5%"],["Mesas ocupadas","12/20","rest","+2"],["Faturamento (dia)","R$ 6.5k","chart","+14%"]],
+ chart:{title:"Vendas por hora",labels:["11h","12h","13h","14h","18h","19h","20h"],values:[12,28,24,9,18,30,26]},
+ summary:{title:"Pedidos em preparo",items:[["Mesa 12 — 2 itens","Pizza • Refrigerante","amber","Na cozinha"],["Mesa 07 — 4 itens","Combos","blue","Saindo"],["Delivery #341","Bairro Centro","amber","Preparando"],["Mesa 03 — 1 item","Sobremesa","green","Pronto"]]},
+ tabs:[
+  {id:"pedidos",l:"Pedidos por mesa",ic:"list",title:"Pedidos por mesa",sub:"Comandas abertas",cols:["Mesa","Itens","Garçom","Valor","Status"],rows:[
+    [{strong:"Mesa 12"},"2 itens","Carlos","R$ 72,00",P("amber","Na cozinha")],
+    [{strong:"Mesa 07"},"4 itens","Bia","R$ 168,00",P("blue","Servindo")],
+    [{strong:"Mesa 03"},"1 item","Carlos","R$ 22,00",P("green","Aberta")],
+    [{strong:"Mesa 15"},"6 itens","Diego","R$ 254,00",P("amber","Na cozinha")],
+    [{strong:"Mesa 09"},"3 itens","Bia","R$ 96,00",P("gray","Fechando")]]},
+  {id:"cozinha",l:"Painel da cozinha",ic:"monitor",title:"Painel da cozinha (KDS)",sub:"Fila de produção por ordem de chegada",cols:["Pedido","Item","Mesa","Tempo","Status"],rows:[
+    [{strong:"#1042"},"Pizza Calabresa","Mesa 12","04:12",P("amber","Preparando")],
+    [{strong:"#1043"},"X-Tudo","Mesa 15","02:40",P("amber","Preparando")],
+    [{strong:"#1041"},"Batata frita","Mesa 07","00:55",P("blue","Finalizando")],
+    [{strong:"#1040"},"Risoto","Mesa 09","—",P("green","Pronto")],
+    [{strong:"#1039"},"Salada","Mesa 03","—",P("gray","Entregue")]]},
+  {id:"cardapio",l:"Cardápio digital",ic:"file",title:"Cardápio digital",sub:"Itens publicados via QR Code",cols:["Produto","Categoria","Preço","Disponível","Status"],rows:[
+    [{strong:"Pizza Calabresa"},"Pizzas","R$ 52,00","Sim",P("green","Ativo")],
+    [{strong:"X-Tudo"},"Lanches","R$ 28,00","Sim",P("green","Ativo")],
+    [{strong:"Risoto de Camarão"},"Pratos","R$ 64,00","Não",P("gray","Esgotado")],
+    [{strong:"Refrigerante Lata"},"Bebidas","R$ 7,00","Sim",P("green","Ativo")],
+    [{strong:"Pudim"},"Sobremesas","R$ 14,00","Sim",P("green","Ativo")]]},
+  {id:"delivery",l:"Delivery",ic:"truck",title:"Delivery",sub:"Entregas em andamento",cols:["Pedido","Cliente","Bairro","Valor","Status"],rows:[
+    [{strong:"#341"},"Marcos A.","Centro","R$ 58,00",P("amber","Preparando")],
+    [{strong:"#340"},"Juliana P.","São José","R$ 96,00",P("blue","A caminho")],
+    [{strong:"#339"},"Rafael L.","Centro","R$ 42,00",P("green","Entregue")],
+    [{strong:"#338"},"Camila R.","Bairro Novo","R$ 120,00",P("blue","A caminho")],
+    [{strong:"#337"},"Tiago M.","São José","R$ 34,00",P("green","Entregue")]]}]
+},
+
+lojas:{name:"Lojas e Comércio",short:"PDV, estoque, vendas e crediário.",icon:"shop",acc:"#2F6BFF",accD:"#1f53d6",
+ actions:[{l:"Abrir caixa",p:true,ic:"cash"},{l:"Nova venda",ic:"plus"}],
+ kpis:[["Vendas hoje","R$ 9.240","cart","+11%"],["Ticket médio","R$ 137","wallet","+6%"],["Itens em estoque","3.482","box","-2%"],["A receber","R$ 18.7k","card","+8%"]],
+ chart:{title:"Vendas nos últimos 7 dias",labels:["Seg","Ter","Qua","Qui","Sex","Sáb","Dom"],values:[6,8,7,9,12,15,5]},
+ summary:{title:"Resumo do caixa",items:[["Dinheiro","R$ 1.240,00","green","Conferido"],["PIX","R$ 4.380,00","green","Conferido"],["Cartão","R$ 3.120,00","blue","Processando"],["Crediário","R$ 500,00","amber","A receber"]]},
+ tabs:[
+  {id:"pdv",l:"Caixa (PDV)",ic:"cash",title:"Frente de caixa (PDV)",sub:"Vendas do dia",cols:["Cupom","Cliente","Itens","Pagamento","Total"],rows:[
+    [{strong:"#10482"},"Consumidor","3","PIX",{strong:"R$ 189,90"}],
+    [{strong:"#10481"},"Loja Bela","8","Cartão",{strong:"R$ 642,00"}],
+    [{strong:"#10480"},"Consumidor","1","Dinheiro",{strong:"R$ 49,90"}],
+    [{strong:"#10479"},"João P.","5","Crediário",{strong:"R$ 320,00"}],
+    [{strong:"#10478"},"Consumidor","2","PIX",{strong:"R$ 98,00"}]]},
+  {id:"estoque",l:"Estoque",ic:"box",title:"Controle de estoque",sub:"Produtos cadastrados",cols:["Produto","SKU","Qtd.","Preço","Status"],rows:[
+    [{strong:"Camiseta Básica"},"CAM-001","142","R$ 49,90",P("green","Em estoque")],
+    [{strong:"Calça Jeans"},"CAL-014","8","R$ 159,90",P("amber","Estoque baixo")],
+    [{strong:"Tênis Runner"},"TEN-220","0","R$ 299,90",P("gray","Esgotado")],
+    [{strong:"Boné Trucker"},"BON-008","64","R$ 39,90",P("green","Em estoque")],
+    [{strong:"Jaqueta Corta-vento"},"JAQ-031","23","R$ 219,90",P("green","Em estoque")]]},
+  {id:"vendas",l:"Vendas",ic:"chart",title:"Vendas",sub:"Histórico de vendas",cols:["Data","Vendedor","Cliente","Itens","Total"],rows:[
+    ["21/05/2026","Bruna","Loja Bela","8",{strong:"R$ 642,00"}],
+    ["21/05/2026","Igor","Consumidor","3",{strong:"R$ 189,90"}],
+    ["20/05/2026","Bruna","João P.","5",{strong:"R$ 320,00"}],
+    ["20/05/2026","Igor","Consumidor","1",{strong:"R$ 49,90"}],
+    ["19/05/2026","Bruna","Maria F.","4",{strong:"R$ 278,00"}]]},
+  {id:"crediario",l:"Crediário",ic:"card",title:"Crediário",sub:"Parcelas a receber",cols:["Cliente","Parcela","Vencimento","Valor","Status"],rows:[
+    [{strong:"João P."},"2/5","30/05/2026","R$ 64,00",P("amber","A vencer")],
+    [{strong:"Maria F."},"1/3","25/05/2026","R$ 92,00",P("blue","Em dia")],
+    [{strong:"Carlos M."},"3/4","18/05/2026","R$ 80,00",P("gray","Atrasado")],
+    [{strong:"Ana L."},"4/6","02/06/2026","R$ 110,00",P("blue","Em dia")],
+    [{strong:"Pedro S."},"5/5","15/05/2026","R$ 70,00",P("green","Quitado")]]}]
+},
+
+mercados:{name:"Mercados e Mercearias",short:"Caixa, estoque, validade e compras.",icon:"market",acc:"#16A34A",accD:"#0f7a37",
+ actions:[{l:"Abrir caixa",p:true,ic:"cash"},{l:"Estoque",ic:"box"}],
+ kpis:[["Vendas hoje","R$ 12.8k","cart","+7%"],["Tickets","486","list","+10%"],["Validade próxima","37 itens","clock","-5%"],["Compras pendentes","6","truck","+1"]],
+ chart:{title:"Faturamento por dia",labels:["Seg","Ter","Qua","Qui","Sex","Sáb","Dom"],values:[9,10,11,12,16,19,7]},
+ summary:{title:"Alertas do dia",items:[["Iogurte Integral","Vence em 2 dias","amber","Atenção"],["Leite UHT","Estoque baixo","amber","Repor"],["Arroz 5kg","Pedido recebido","green","OK"],["Refrigerante 2L","Vence hoje","gray","Crítico"]]},
+ tabs:[
+  {id:"caixa",l:"Frente de caixa",ic:"cash",title:"Frente de caixa",sub:"Operação dos caixas",cols:["Cupom","Caixa","Itens","Pagamento","Total"],rows:[
+    [{strong:"#88231"},"Caixa 02","14","PIX",{strong:"R$ 187,40"}],
+    [{strong:"#88230"},"Caixa 01","6","Dinheiro",{strong:"R$ 64,20"}],
+    [{strong:"#88229"},"Caixa 03","22","Cartão",{strong:"R$ 312,90"}],
+    [{strong:"#88228"},"Caixa 02","3","PIX",{strong:"R$ 28,50"}],
+    [{strong:"#88227"},"Caixa 01","9","Cartão",{strong:"R$ 142,00"}]]},
+  {id:"estoque",l:"Estoque",ic:"box",title:"Controle de estoque",sub:"Produtos por seção",cols:["Produto","Seção","Qtd.","Custo","Status"],rows:[
+    [{strong:"Arroz 5kg"},"Mercearia","210","R$ 22,90",P("green","OK")],
+    [{strong:"Leite UHT"},"Laticínios","18","R$ 4,20",P("amber","Repor")],
+    [{strong:"Refrigerante 2L"},"Bebidas","96","R$ 6,80",P("green","OK")],
+    [{strong:"Sabão em pó"},"Limpeza","42","R$ 12,50",P("green","OK")],
+    [{strong:"Iogurte Integral"},"Laticínios","30","R$ 3,10",P("amber","Validade")]]},
+  {id:"validade",l:"Validade",ic:"clock",title:"Controle de validade",sub:"Produtos próximos do vencimento",cols:["Produto","Lote","Validade","Qtd.","Status"],rows:[
+    [{strong:"Refrigerante 2L"},"LT-0921","Hoje","12",P("gray","Crítico")],
+    [{strong:"Iogurte Integral"},"LT-1180","Em 2 dias","30",P("amber","Atenção")],
+    [{strong:"Pão de forma"},"LT-2210","Em 3 dias","18",P("amber","Atenção")],
+    [{strong:"Presunto"},"LT-3001","Em 6 dias","9",P("blue","Monitorar")],
+    [{strong:"Queijo Mussarela"},"LT-3002","Em 9 dias","14",P("green","OK")]]},
+  {id:"compras",l:"Compras",ic:"truck",title:"Compras e fornecedores",sub:"Pedidos de reposição",cols:["Pedido","Fornecedor","Itens","Valor","Status"],rows:[
+    [{strong:"#5521"},"Distribuidora Sul","32","R$ 4.280,00",P("amber","Pendente")],
+    [{strong:"#5520"},"Laticínios MG","12","R$ 1.140,00",P("blue","A caminho")],
+    [{strong:"#5519"},"Bebidas Norte","20","R$ 2.060,00",P("green","Recebido")],
+    [{strong:"#5518"},"Grãos & Cia","8","R$ 980,00",P("green","Recebido")],
+    [{strong:"#5517"},"Higiene Total","15","R$ 1.520,00",P("amber","Pendente")]]}]
+},
+
+oficinas:{name:"Oficinas Mecânicas",short:"Ordens de serviço, veículos, peças e histórico.",icon:"oficina",acc:"#F59E0B",accD:"#b9690a",
+ actions:[{l:"Nova OS",p:true,ic:"plus"},{l:"Ver veículos",ic:"car"}],
+ kpis:[["OS abertas","17","file","+3"],["Veículos","842","car","+12"],["Faturamento (mês)","R$ 64.2k","wallet","+15%"],["Peças em baixo estoque","9","gear","-4"]],
+ chart:{title:"Ordens de serviço por dia",labels:["Seg","Ter","Qua","Qui","Sex","Sáb","Dom"],values:[6,8,7,9,10,5,2]},
+ summary:{title:"OS em andamento",items:[["OS #312 — Civic","Troca de óleo","blue","Em execução"],["OS #311 — Gol","Revisão completa","amber","Aguardando peça"],["OS #310 — HB20","Alinhamento","green","Pronto"],["OS #309 — Onix","Freios","blue","Em execução"]]},
+ tabs:[
+  {id:"os",l:"Ordens de serviço",ic:"file",title:"Ordens de serviço",sub:"OS abertas e em execução",cols:["OS","Cliente","Veículo","Serviço","Status"],rows:[
+    [{strong:"#312"},"Marcos A.","Honda Civic","Troca de óleo",P("blue","Em execução")],
+    [{strong:"#311"},"Juliana P.","VW Gol","Revisão completa",P("amber","Aguardando peça")],
+    [{strong:"#310"},"Rafael L.","Hyundai HB20","Alinhamento",P("green","Pronto")],
+    [{strong:"#309"},"Camila R.","Chevrolet Onix","Freios",P("blue","Em execução")],
+    [{strong:"#308"},"Tiago M.","Fiat Argo","Suspensão",P("gray","Orçamento")]]},
+  {id:"veiculos",l:"Veículos",ic:"car",title:"Veículos",sub:"Frota e clientes",cols:["Placa","Modelo","Cliente","KM","Status"],rows:[
+    [{strong:"QRA-1D23"},"Honda Civic","Marcos A.","84.200",P("blue","Na oficina")],
+    [{strong:"PQR-4567"},"VW Gol","Juliana P.","132.500",P("blue","Na oficina")],
+    [{strong:"ABC-9X87"},"Hyundai HB20","Rafael L.","45.900",P("green","Pronto")],
+    [{strong:"DEF-2025"},"Chevrolet Onix","Camila R.","60.100",P("blue","Na oficina")],
+    [{strong:"GHI-7788"},"Fiat Argo","Tiago M.","28.700",P("gray","Aguardando")]]},
+  {id:"pecas",l:"Peças",ic:"gear",title:"Controle de peças",sub:"Estoque de peças",cols:["Peça","Código","Qtd.","Preço","Status"],rows:[
+    [{strong:"Filtro de óleo"},"FO-110","42","R$ 28,00",P("green","Em estoque")],
+    [{strong:"Pastilha de freio"},"PF-220","6","R$ 145,00",P("amber","Baixo")],
+    [{strong:"Correia dentada"},"CD-330","0","R$ 210,00",P("gray","Esgotado")],
+    [{strong:"Vela de ignição"},"VI-440","88","R$ 32,00",P("green","Em estoque")],
+    [{strong:"Amortecedor"},"AM-550","12","R$ 380,00",P("green","Em estoque")]]},
+  {id:"historico",l:"Histórico",ic:"history",title:"Histórico de serviços",sub:"Serviços realizados",cols:["Data","Veículo","Serviço","Valor","Status"],rows:[
+    ["20/05/2026",{strong:"Hyundai HB20"},"Alinhamento + balanceamento","R$ 180,00",P("green","Concluído")],
+    ["18/05/2026",{strong:"Honda Civic"},"Troca de óleo","R$ 240,00",P("green","Concluído")],
+    ["15/05/2026",{strong:"VW Gol"},"Revisão 130 mil km","R$ 920,00",P("green","Concluído")],
+    ["12/05/2026",{strong:"Fiat Argo"},"Troca de pastilhas","R$ 320,00",P("green","Concluído")],
+    ["09/05/2026",{strong:"Chevrolet Onix"},"Suspensão dianteira","R$ 760,00",P("green","Concluído")]]}]
+},
+
+borracharias:{name:"Borracharias",short:"Serviços, pneus, clientes e financeiro.",icon:"tire",acc:"#38BDF8",accD:"#0e83c0",
+ actions:[{l:"Novo serviço",p:true,ic:"plus"},{l:"Clientes",ic:"users"}],
+ kpis:[["Serviços hoje","42","list","+8%"],["Clientes","1.106","users","+5%"],["Faturamento (dia)","R$ 2.380","wallet","+12%"],["Caixa atual","R$ 1.540","cash","OK"]],
+ chart:{title:"Serviços por dia",labels:["Seg","Ter","Qua","Qui","Sex","Sáb","Dom"],values:[22,28,26,30,38,44,12]},
+ summary:{title:"Serviços recentes",items:[["Troca de pneu — Gol","2 pneus","green","Concluído"],["Conserto — Saveiro","Reparo a quente","blue","Em execução"],["Alinhamento — HB20","Dianteiro","amber","Na fila"],["Calibragem — Onix","4 pneus","green","Concluído"]]},
+ tabs:[
+  {id:"servicos",l:"Serviços",ic:"list",title:"Serviços",sub:"Atendimentos do dia",cols:["OS","Cliente","Veículo","Serviço","Status"],rows:[
+    [{strong:"#581"},"Marcos A.","VW Gol","Troca de 2 pneus",P("green","Concluído")],
+    [{strong:"#582"},"Juliana P.","VW Saveiro","Conserto (reparo)",P("blue","Em execução")],
+    [{strong:"#583"},"Rafael L.","Hyundai HB20","Alinhamento",P("amber","Na fila")],
+    [{strong:"#584"},"Camila R.","Chevrolet Onix","Calibragem",P("green","Concluído")],
+    [{strong:"#585"},"Tiago M.","Fiat Strada","Rodízio de pneus",P("gray","Orçamento")]]},
+  {id:"pneus",l:"Pneus",ic:"tire",title:"Estoque de pneus",sub:"Medidas disponíveis",cols:["Medida","Marca","Qtd.","Preço","Status"],rows:[
+    [{strong:"175/70 R13"},"Pirelli","24","R$ 320,00",P("green","Em estoque")],
+    [{strong:"185/65 R15"},"Goodyear","6","R$ 410,00",P("amber","Baixo")],
+    [{strong:"205/55 R16"},"Michelin","12","R$ 560,00",P("green","Em estoque")],
+    [{strong:"195/60 R15"},"Bridgestone","0","R$ 480,00",P("gray","Esgotado")],
+    [{strong:"165/70 R13"},"Firestone","18","R$ 290,00",P("green","Em estoque")]]},
+  {id:"clientes",l:"Clientes",ic:"users",title:"Clientes",sub:"Base de clientes",cols:["Cliente","Telefone","Veículo","Última visita","Status"],rows:[
+    [{strong:"Marcos A."},"(79) 99812-3344","VW Gol","21/05/2026",P("green","Ativo")],
+    [{strong:"Juliana P."},"(79) 99654-1122","VW Saveiro","21/05/2026",P("green","Ativo")],
+    [{strong:"Rafael L."},"(79) 99988-7766","Hyundai HB20","19/05/2026",P("green","Ativo")],
+    [{strong:"Camila R."},"(79) 99777-0099","Chevrolet Onix","18/05/2026",P("green","Ativo")],
+    [{strong:"Tiago M."},"(79) 99321-4455","Fiat Strada","10/05/2026",P("gray","Inativo")]]},
+  {id:"financeiro",l:"Financeiro",ic:"wallet",title:"Financeiro",sub:"Movimentação do dia",cols:["Hora","Descrição","Tipo","Valor","Status"],rows:[
+    ["14:20",{strong:"Troca de 2 pneus"},"Entrada","R$ 640,00",P("green","Recebido")],
+    ["13:05",{strong:"Conserto a quente"},"Entrada","R$ 60,00",P("green","Recebido")],
+    ["11:40",{strong:"Compra de pneus"},"Saída","R$ 1.200,00",P("gray","Pago")],
+    ["10:15",{strong:"Calibragem"},"Entrada","R$ 20,00",P("green","Recebido")],
+    ["09:30",{strong:"Alinhamento"},"Entrada","R$ 80,00",P("blue","A receber")]]}]
+},
+
+servicos:{name:"Empresas de Serviços",short:"Agenda, ordens de serviço, clientes e financeiro.",icon:"serv",acc:"#6366F1",accD:"#4548c4",
+ actions:[{l:"Nova OS",p:true,ic:"plus"},{l:"Agenda",ic:"calendar"}],
+ kpis:[["OS abertas","23","file","+4"],["Atendimentos hoje","11","calendar","+2"],["Clientes","318","users","+6%"],["A receber","R$ 27.4k","card","+9%"]],
+ chart:{title:"Atendimentos por dia",labels:["Seg","Ter","Qua","Qui","Sex","Sáb","Dom"],values:[8,11,9,12,14,6,3]},
+ summary:{title:"Agenda de hoje",items:[["09:00 — Instalação","Cliente Alfa Ltda","green","Confirmado"],["11:00 — Manutenção","Beta Comércio","blue","A caminho"],["14:00 — Vistoria","Gamma Serviços","amber","Aguardando"],["16:30 — Suporte","Delta S.A.","gray","Agendado"]]},
+ tabs:[
+  {id:"agenda",l:"Agenda",ic:"calendar",title:"Agenda",sub:"Atendimentos de hoje",cols:["Horário","Cliente","Serviço","Responsável","Status"],rows:[
+    ["09:00",{strong:"Alfa Ltda"},"Instalação","Equipe A",P("green","Confirmado")],
+    ["11:00",{strong:"Beta Comércio"},"Manutenção","Equipe B",P("blue","A caminho")],
+    ["14:00",{strong:"Gamma Serviços"},"Vistoria","Equipe A",P("amber","Aguardando")],
+    ["16:30",{strong:"Delta S.A."},"Suporte","Equipe C",P("gray","Agendado")],
+    ["17:30",{strong:"Ômega ME"},"Orçamento","Equipe B",P("gray","Agendado")]]},
+  {id:"os",l:"Ordens de serviço",ic:"file",title:"Ordens de serviço",sub:"OS abertas",cols:["OS","Cliente","Serviço","Responsável","Status"],rows:[
+    [{strong:"#412"},"Alfa Ltda","Instalação de rede","Equipe A",P("blue","Em execução")],
+    [{strong:"#411"},"Beta Comércio","Manutenção preventiva","Equipe B",P("amber","Agendada")],
+    [{strong:"#410"},"Gamma Serviços","Vistoria técnica","Equipe A",P("green","Concluída")],
+    [{strong:"#409"},"Delta S.A.","Suporte mensal","Equipe C",P("blue","Em execução")],
+    [{strong:"#408"},"Ômega ME","Consultoria","Equipe B",P("gray","Orçamento")]]},
+  {id:"clientes",l:"Clientes",ic:"users",title:"Clientes",sub:"Base de clientes",cols:["Cliente","Contato","Contrato","Último serviço","Status"],rows:[
+    [{strong:"Alfa Ltda"},"(79) 3211-0010","Mensal","21/05/2026",P("green","Ativo")],
+    [{strong:"Beta Comércio"},"(79) 3211-0022","Avulso","20/05/2026",P("green","Ativo")],
+    [{strong:"Gamma Serviços"},"(79) 3211-0033","Mensal","18/05/2026",P("green","Ativo")],
+    [{strong:"Delta S.A."},"(79) 3211-0044","Anual","15/05/2026",P("green","Ativo")],
+    [{strong:"Ômega ME"},"(79) 3211-0055","—","02/04/2026",P("gray","Prospect")]]},
+  {id:"financeiro",l:"Financeiro",ic:"wallet",title:"Financeiro",sub:"Faturas e recebimentos",cols:["Fatura","Cliente","Vencimento","Valor","Status"],rows:[
+    [{strong:"NF-2041"},"Alfa Ltda","30/05/2026","R$ 4.200,00",P("blue","Em dia")],
+    [{strong:"NF-2040"},"Delta S.A.","25/05/2026","R$ 8.900,00",P("amber","A vencer")],
+    [{strong:"NF-2039"},"Beta Comércio","18/05/2026","R$ 1.500,00",P("gray","Atrasada")],
+    [{strong:"NF-2038"},"Gamma Serviços","02/06/2026","R$ 3.200,00",P("blue","Em dia")],
+    [{strong:"NF-2037"},"Ômega ME","15/05/2026","R$ 980,00",P("green","Paga")]]}]
+},
+};
+const ORDER=["clinicas","restaurantes","lojas","mercados","oficinas","borracharias","servicos"];
+
+/* =========================================================
+   RENDER
+========================================================= */
+function cell(c){
+  if(c && typeof c==="object"){
+    if(c.pill) return '<span class="pill '+c.pill+'">'+c.v+'</span>';
+    if(c.strong) return '<span class="strong">'+c.strong+'</span>';
+  }
+  return c;
+}
+function miniChart(ch,acc){
+  const W=560,H=210,pad=26,n=ch.values.length,max=Math.max(...ch.values);
+  const slot=(W-pad*2)/n, bw=slot*0.5;
+  let g="";
+  for(let k=1;k<=3;k++){const y=pad+(H-pad*2)*(k/4);g+='<line x1="'+pad+'" y1="'+y+'" x2="'+(W-pad)+'" y2="'+y+'" stroke="#eef2f8" stroke-width="1"/>';}
+  ch.values.forEach((v,i)=>{
+    const h=Math.max(4,(v/max)*(H-pad*2-10)), x=pad+i*slot+(slot-bw)/2, y=H-pad-h;
+    g+='<rect x="'+x+'" y="'+y+'" width="'+bw+'" height="'+h+'" rx="5" fill="'+acc+'"><title>'+ch.labels[i]+': '+v+'</title></rect>';
+    g+='<text x="'+(x+bw/2)+'" y="'+(H-8)+'" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#9aa7bd">'+ch.labels[i]+'</text>';
+  });
+  return '<svg viewBox="0 0 '+W+' '+H+'" width="100%" preserveAspectRatio="xMidYMid meet">'+g+'</svg>';
+}
+
+
+const SLUG="restaurantes";
+const m=MOD[SLUG];
+let TAB=m.tabs[0].id;
+
+function trendIco(delta){return ico("chart",'style="width:13px;height:13px'+(String(delta).startsWith("-")?";transform:scaleY(-1)":"")+'"');}
+
+function renderSidebar(){
+  document.getElementById("sbLogo").innerHTML=logoMark("sb");
+  document.getElementById("sbBadge").textContent="MÓDULO • "+m.name.toUpperCase();
+  document.getElementById("sbNav").innerHTML=m.tabs.map(function(t){
+    return '<button class="sb-item'+(t.id===TAB?' on':'')+'" onclick="switchTab(\''+t.id+'\')">'+ico(t.ic)+'<span>'+t.l+'</span></button>';
+  }).join("");
+}
+function renderContent(){
+  var tab=m.tabs.find(function(t){return t.id===TAB})||m.tabs[0];
+  document.getElementById("crumb").innerHTML='RGA ERP <span style="opacity:.5">/</span> <b>'+m.name+'</b> <span style="opacity:.5">/</span> <span class="acc">'+tab.l+'</span>';
+  var kpis=m.kpis.map(function(k){return '<div class="kpi"><div class="top"><span class="lbl">'+k[0]+'</span><span class="kico">'+ico(k[2])+'</span></div><div class="val">'+k[1]+'</div><div class="delta '+(String(k[3]).startsWith("-")?"down":"up")+'">'+trendIco(k[3])+k[3]+'</div></div>';}).join("");
+  var summary=m.summary.items.map(function(it){return '<div class="summary-item"><span class="si-ic">'+ico(tab.ic)+'</span><div><b>'+it[0]+'</b><span>'+it[1]+'</span></div><span class="pill '+it[2]+'">'+it[3]+'</span></div>';}).join("");
+  var actions=m.actions.map(function(a){return '<button class="btn '+(a.p?'btn-green':'btn-outline')+'" onclick="featureToast(\''+a.l+'\')">'+ico(a.ic)+a.l+'</button>';}).join("");
+  var thead='<tr>'+tab.cols.map(function(c){return '<th>'+c+'</th>'}).join("")+'</tr>';
+  var tbody=tab.rows.map(function(r){return '<tr>'+r.map(function(c){return '<td>'+cell(c)+'</td>'}).join("")+'</tr>';}).join("");
+  document.getElementById("content").innerHTML=
+    '<div class="page-head"><div>'+
+      '<span class="mod-tag">'+ico(m.icon,'style="width:14px;height:14px"')+m.name+'</span>'+
+      '<h1>'+tab.title+'</h1><p>'+tab.sub+'</p></div>'+
+      '<div class="head-actions">'+actions+'</div>'+
+    '</div>'+
+    '<div class="kpis">'+kpis+'</div>'+
+    '<div class="row2">'+
+      '<div class="panel"><div class="panel-head"><h3>'+m.chart.title+'</h3><span class="legend"><i></i> Período atual</span></div>'+miniChart(m.chart,m.acc)+'</div>'+
+      '<div class="panel"><div class="panel-head"><h3>'+m.summary.title+'</h3></div>'+summary+'</div>'+
+    '</div>'+
+    '<div class="table-card"><div class="tc-head"><h3>'+tab.title+'</h3><div class="tools"><span class="chip">Hoje</span><span class="chip">Exportar</span></div></div>'+
+      '<div class="table-scroll"><table><thead>'+thead+'</thead><tbody>'+tbody+'</tbody></table></div></div>';
+}
+function switchTab(id){TAB=id;renderSidebar();renderContent();closeSidebar();window.scrollTo(0,0);}
+
+function openSidebar(){document.getElementById("sidebar").classList.add("open");document.getElementById("overlay").classList.add("show");}
+function closeSidebar(){document.getElementById("sidebar").classList.remove("open");document.getElementById("overlay").classList.remove("show");}
+
+var toastTimer;
+function toast(title,msg){document.getElementById("toastTitle").textContent=title;document.getElementById("toastMsg").textContent=msg||"";var t=document.getElementById("toast");t.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(function(){t.classList.remove("show")},3200);}
+function featureToast(label){toast("“"+label+"”","Recurso disponível na versão completa. Solicite uma demonstração.");}
+function openDemo(){window.open(waUrl(m.name),"_blank","noopener");}
+
+(function init(){
+  var erp=document.querySelector(".erp");
+  erp.style.setProperty("--acc",m.acc); erp.style.setProperty("--acc-d",m.accD);
+  document.querySelectorAll(".wa-link").forEach(function(a){a.href=waUrl(m.name);a.target="_blank";a.rel="noopener";});
+  document.querySelectorAll(".demo-btn").forEach(function(b){b.onclick=openDemo;});
+  renderSidebar(); renderContent();
+})();
+
+</script>
+</body>
+</html>

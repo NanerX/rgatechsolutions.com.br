@@ -1,0 +1,10 @@
+FOTOS DESTA PAGINA (Oficinas Mecânicas)
+
+hero.jpg  -> imagem de fundo do topo
+1.jpg  -> Ordens de Serviço  (Mecânico trabalhando no veículo)
+2.jpg  -> Cadastro de Veículos  (Veículo em manutenção)
+3.jpg  -> Controle de Peças  (Estoque de peças organizado)
+4.jpg  -> Histórico de Serviços  (Tela de histórico de serviços)
+5.jpg  -> Financeiro  (Dashboard financeiro da oficina)
+
+Formato sugerido: JPG, 1200x900px (4:3), ate ~300KB. Assim que o arquivo existir, ele aparece automaticamente no lugar do placeholder.
