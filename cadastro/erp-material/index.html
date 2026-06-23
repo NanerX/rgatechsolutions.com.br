@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro ERP Material de Construção | RGA Tech Solutions</title>
+<meta name="description" content="Pré-cadastro para implantação do RGA ERP Material de Construção. Baixe o instalador piloto e envie os dados da sua loja.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cadastro ERP Material de Construção | RGA Tech Solutions">
+<meta property="og:description" content="Pré-cadastro para implantação do RGA ERP Material de Construção.">
+<meta property="og:locale" content="pt_BR">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='30' fill='%230a1628'/%3E%3Ctext x='60' y='82' text-anchor='middle' font-family='sans-serif' font-weight='800' font-size='74' fill='%23fff'%3ER%3C/text%3E%3Ccircle cx='90' cy='90' r='5.4' fill='%2300E599'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy-900:#060d1c;--navy-800:#0a1628;--navy-700:#0e2038;--navy-600:#13294b;
+  --blue:#1d4ed8;--blue-bright:#2f6bff;--green:#00e599;--green-deep:#03b277;
+  --gray-50:#f6f8fb;--gray-100:#eef2f7;--gray-200:#dbe2ec;--gray-400:#9aa7bd;--gray-500:#6a7892;
+  --ink:#0c1424;--white:#fff;--radius:18px;
+  --shadow-soft:0 18px 50px -20px rgba(8,20,45,.35);--shadow-card:0 24px 60px -28px rgba(8,20,45,.28);
+  --maxw:1040px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Manrope',sans-serif;background:var(--gray-50);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Sora',sans-serif;line-height:1.15;letter-spacing:-.02em;font-weight:700}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.mono{font-family:'JetBrains Mono',monospace;letter-spacing:.03em}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:16px}
+.eyebrow::before{content:"";width:24px;height:2px;background:linear-gradient(90deg,var(--green),transparent);border-radius:2px}
+
+/* header */
+header{background:var(--navy-800);position:sticky;top:0;z-index:30}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 22px}
+.logo{display:flex;align-items:center;gap:12px;color:#fff}
+.logo-mark{width:42px;height:42px;flex-shrink:0}
+.logo-text b{font-family:'Sora';font-weight:800;font-size:1.08rem;display:block;line-height:1}
+.logo-text b .tech{color:var(--blue-bright)}
+.logo-text small{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);font-family:'JetBrains Mono'}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:'Sora',sans-serif;font-weight:600;font-size:.95rem;padding:14px 24px;border-radius:12px;cursor:pointer;border:none;transition:transform .2s ease,box-shadow .2s ease,background .2s ease;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn-green{background:linear-gradient(120deg,var(--green),var(--green-deep));color:#04231a;box-shadow:0 16px 32px -16px rgba(0,229,153,.6)}
+.btn-blue{background:linear-gradient(120deg,var(--blue-bright),var(--blue));color:#fff;box-shadow:0 16px 32px -16px rgba(47,107,255,.6)}
+.btn-ghost{background:transparent;border:1.5px solid var(--gray-200);color:var(--ink)}
+.btn-line{background:#fff;border:1.5px solid var(--gray-200);color:var(--ink)}
+.btn[disabled]{opacity:.5;cursor:not-allowed;transform:none}
+.btn-sm{padding:10px 16px;font-size:.85rem}
+
+/* hero */
+.hero{background:radial-gradient(120% 120% at 80% 0,var(--navy-700),var(--navy-900));color:#fff;padding:64px 0 80px}
+.hero h1{font-size:clamp(1.9rem,5vw,3rem);margin-bottom:16px}
+.hero p.sub{color:#c7d2e4;font-size:1.12rem;max-width:620px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+
+/* layout */
+.section{padding:46px 0}
+.grid{display:grid;gap:22px}
+@media(min-width:860px){.grid-2{grid-template-columns:1.1fr .9fr}}
+.card{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius);box-shadow:var(--shadow-card);padding:28px}
+.card h2{font-size:1.4rem;margin-bottom:6px}
+.card h3{font-size:1.05rem;margin:0 0 10px}
+.muted{color:var(--gray-500)}
+.feat{list-style:none;display:grid;gap:10px;margin-top:14px}
+.feat li{display:flex;gap:10px;align-items:flex-start;font-size:.97rem}
+.feat li::before{content:"";width:18px;height:18px;border-radius:6px;flex-shrink:0;margin-top:2px;background:linear-gradient(120deg,var(--green),var(--green-deep))}
+
+/* download verify */
+.verify{margin-top:16px;background:var(--gray-50);border:1px dashed var(--gray-200);border-radius:14px;padding:16px}
+.verify .row{display:flex;justify-content:space-between;gap:12px;font-size:.86rem;padding:5px 0;border-bottom:1px solid var(--gray-100)}
+.verify .row:last-child{border-bottom:none}
+.verify .row b{color:var(--gray-500);font-weight:600}
+.verify .row span{font-family:'JetBrains Mono',monospace;text-align:right;word-break:break-all;font-size:.78rem}
+
+/* notice */
+.notice{background:#fff7e6;border:1px solid #ffe2a8;border-radius:14px;padding:16px 18px;color:#7a5b00;font-size:.92rem}
+.notice b{color:#5c4400}
+
+/* form */
+.form-grid{display:grid;gap:16px}
+@media(min-width:620px){.form-grid.cols-2{grid-template-columns:1fr 1fr}}
+.fieldset{border:none;margin-top:6px}
+.fieldset > legend{font-family:'Sora';font-weight:700;font-size:1.05rem;margin:18px 0 6px;padding-top:14px;border-top:1px solid var(--gray-100);width:100%}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:.85rem;font-weight:600;color:var(--ink)}
+.field .req{color:var(--blue)}
+.field input,.field select,.field textarea{font-family:'Manrope';font-size:.95rem;padding:12px 13px;border:1.5px solid var(--gray-200);border-radius:11px;background:#fff;color:var(--ink);transition:border-color .15s ease}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue-bright)}
+.field input.invalid,.field select.invalid{border-color:#e0506a;background:#fff5f6}
+.field .hint{font-size:.78rem;color:var(--gray-400)}
+.accept{display:flex;gap:11px;align-items:flex-start;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:12px;padding:14px;margin-top:6px;font-size:.9rem}
+.accept input{margin-top:3px;width:18px;height:18px;flex-shrink:0}
+.form-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.form-msg{margin-top:14px;font-size:.92rem;padding:12px 14px;border-radius:11px;display:none}
+.form-msg.err{display:block;background:#fff5f6;border:1px solid #f0c2cc;color:#a32540}
+.form-msg.ok{display:block;background:#eafff6;border:1px solid #b4ecd5;color:#067a52}
+
+/* footer */
+footer{background:var(--navy-900);color:#c7d2e4;padding:40px 0;margin-top:30px}
+.foot{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+.foot a{color:var(--green)}
+.foot small{display:block;color:var(--gray-400);font-size:.82rem}
+.back-home{font-size:.9rem;color:#c7d2e4;display:inline-flex;gap:6px;align-items:center}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="/" class="logo" aria-label="RGA Tech Solutions - início">
+      <svg class="logo-mark" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0E2038"/><stop offset=".55" stop-color="#13294B"/><stop offset="1" stop-color="#0A1628"/></linearGradient>
+          <clipPath id="cp"><rect width="120" height="120" rx="30"/></clipPath>
+        </defs>
+        <g clip-path="url(#cp)"><rect width="120" height="120" rx="30" fill="url(#g1)"/></g>
+        <text x="60" y="82" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="74" fill="#fff">R</text>
+        <circle cx="90" cy="90" r="5.4" fill="#00E599"/>
+      </svg>
+      <div class="logo-text"><b>RGA <span class="tech">Tech</span></b><small>Solutions</small></div>
+    </a>
+    <a class="back-home" href="/">← Voltar ao site</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">RGA ERP · Material de Construção</span>
+    <h1>Cadastro para o RGA ERP Material de Construção</h1>
+    <p class="sub">Preencha os dados da sua loja para iniciar o piloto do sistema.</p>
+    <div class="hero-actions">
+      <a class="btn btn-green" href="#baixar">Baixar instalador piloto 0.1.2</a>
+      <a class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.25)" href="#cadastro">Fazer o cadastro</a>
+    </div>
+  </div>
+</section>
+
+<div class="section">
+  <div class="wrap grid grid-2">
+
+    <!-- Apresentação + download -->
+    <div class="card" id="baixar">
+      <span class="eyebrow" style="color:var(--green-deep)">O que é</span>
+      <h2>Sistema local para o seu balcão</h2>
+      <p class="muted">Um ERP que funciona no computador da loja, sem depender de internet para vender.</p>
+      <ul class="feat">
+        <li>Vendas no balcão (PDV) e caixa</li>
+        <li>Controle de produtos e estoque</li>
+        <li>Importação de produtos por planilha (CSV)</li>
+        <li>Operação local — não para se a internet oscilar</li>
+        <li>Comprovante <b>não fiscal</b> nesta primeira versão</li>
+        <li>NFC-e pela Focus em etapa posterior</li>
+      </ul>
+
+      <div style="margin-top:22px">
+        <a class="btn btn-blue" href="https://api.rgatechsolutions.com.br/downloads/erp-material/rga-erp-material-setup-0.1.2.exe" rel="noopener">⬇ Baixar instalador piloto 0.1.2</a>
+      </div>
+
+      <div class="verify" aria-label="Verificação do instalador">
+        <div class="row"><b>Versão</b><span>0.1.2</span></div>
+        <div class="row"><b>Tamanho</b><span>81.947.416 bytes (~78,1 MB)</span></div>
+        <div class="row"><b>SHA-256</b><span>D2979756315B51E852F25DCF81ED40EC7DD5ED569162D3C47D0E9851C010AD0C</span></div>
+      </div>
+      <p class="hint" style="margin-top:8px;color:var(--gray-400)">Após baixar, confira o SHA-256 no Windows PowerShell:
+        <span class="mono">Get-FileHash .\rga-erp-material-setup-0.1.2.exe -Algorithm SHA256</span></p>
+    </div>
+
+    <!-- Aviso fiscal + passos -->
+    <div>
+      <div class="notice">
+        <b>Versão piloto:</b> esta versão permite operação local com cadastro de produtos, estoque,
+        caixa, vendas e <b>comprovante não fiscal</b>. A emissão de NFC-e pela Focus será configurada em
+        uma etapa posterior, mediante certificado digital, dados fiscais, CSC/Token e homologação.
+      </div>
+      <div class="card" style="margin-top:18px">
+        <h3>Como funciona o piloto</h3>
+        <ul class="feat">
+          <li>Você preenche o cadastro abaixo</li>
+          <li>Baixa o instalador 0.1.2 e instala no Windows</li>
+          <li>A RGA cria sua loja e seu usuário</li>
+          <li>Você recebe login e senha temporária por canal seguro</li>
+          <li>Importa os produtos e começa a vender</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Formulário -->
+<div class="section" id="cadastro">
+  <div class="wrap">
+    <div class="card">
+      <span class="eyebrow" style="color:var(--green-deep)">Pré-cadastro</span>
+      <h2>Dados da sua loja</h2>
+      <p class="muted">Campos com <span style="color:var(--blue)">*</span> são obrigatórios. Não pedimos senha nem dados sigilosos do certificado.</p>
+
+      <form id="form" novalidate>
+        <fieldset class="fieldset">
+          <legend>Dados da loja</legend>
+          <div class="form-grid cols-2">
+            <div class="field"><label>Nome fantasia <span class="req">*</span></label><input name="fantasia" required></div>
+            <div class="field"><label>Razão social</label><input name="razao"></div>
+            <div class="field"><label>CNPJ <span class="req">*</span></label><input name="cnpj" inputmode="numeric" placeholder="00.000.000/0000-00" maxlength="18" required><span class="hint">14 dígitos.</span></div>
+            <div class="field"><label>Inscrição Estadual</label><input name="ie" placeholder="opcional"></div>
+            <div class="field"><label>Cidade <span class="req">*</span></label><input name="cidade" required></div>
+            <div class="field"><label>UF <span class="req">*</span></label>
+              <select name="uf" required>
+                <option value="">Selecione…</option>
+                <option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option>
+              </select>
+            </div>
+            <div class="field" style="grid-column:1/-1"><label>Endereço</label><input name="endereco" placeholder="opcional"></div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>Responsável</legend>
+          <div class="form-grid cols-2">
+            <div class="field"><label>Nome do responsável <span class="req">*</span></label><input name="responsavel" required></div>
+            <div class="field"><label>WhatsApp <span class="req">*</span></label><input name="whatsapp" inputmode="tel" placeholder="(79) 99999-9999" required></div>
+            <div class="field" style="grid-column:1/-1"><label>E-mail <span class="req">*</span></label><input name="email" type="email" placeholder="voce@loja.com.br" required></div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>Operação</legend>
+          <div class="form-grid cols-2">
+            <div class="field"><label>Segmento</label>
+              <select name="segmento"><option>Material de construção</option><option>Ferragem</option><option>Agro/construção</option><option>Outro</option></select>
+            </div>
+            <div class="field"><label>Quantidade aproximada de produtos</label>
+              <select name="qtd_produtos"><option>Até 100</option><option>100 a 500</option><option>500 a 2.000</option><option>Mais de 2.000</option></select>
+            </div>
+            <div class="field"><label>Caixas / computadores</label><input name="caixas" inputmode="numeric" placeholder="ex.: 1"></div>
+            <div class="field"><label>Usa leitor de código de barras?</label><select name="leitor"><option>Não sei</option><option>Sim</option><option>Não</option></select></div>
+            <div class="field"><label>Usa impressora térmica?</label><select name="impressora"><option>Não sei</option><option>Sim</option><option>Não</option></select></div>
+            <div class="field"><label>Precisa importar produtos por planilha?</label><select name="importar"><option>Sim</option><option>Não</option><option>Não sei</option></select></div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>Fiscal / NFC-e futura</legend>
+          <div class="form-grid cols-2">
+            <div class="field"><label>Deseja emitir NFC-e futuramente?</label><select name="quer_nfce"><option>Sim</option><option>Não</option><option>Ainda não sei</option></select></div>
+            <div class="field"><label>Já possui certificado digital A1?</label><select name="tem_a1"><option>Não</option><option>Sim</option><option>Não sei</option></select></div>
+            <div class="field"><label>Já possui CSC / Token NFC-e?</label><select name="tem_csc"><option>Não</option><option>Sim</option><option>Não sei</option></select></div>
+            <div class="field"><label>Possui contador?</label><select name="tem_contador"><option>Sim</option><option>Não</option></select></div>
+            <div class="field" style="grid-column:1/-1"><label>Nome / contato do contador</label><input name="contador" placeholder="opcional"></div>
+          </div>
+          <p class="hint" style="margin-top:8px">Não envie aqui a senha do certificado, o CSC nem tokens. Isso é configurado depois, em ambiente protegido.</p>
+        </fieldset>
+
+        <label class="accept">
+          <input type="checkbox" name="aceite" required>
+          <span>Entendo que esta versão piloto opera com <b>comprovante não fiscal</b> e que a emissão NFC-e será ativada somente após configuração fiscal, homologação e validação.</span>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-green">Enviar cadastro pelo WhatsApp</button>
+          <button type="button" id="byEmail" class="btn btn-line">Enviar por e-mail</button>
+          <a class="btn btn-ghost" href="https://wa.me/5579998358788?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20o%20ERP%20Material" rel="noopener" target="_blank">Falar com a RGA</a>
+        </div>
+        <div class="form-msg" id="formMsg" role="status"></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <strong style="color:#fff;font-family:'Sora'">RGA Tech Solutions</strong>
+      <small>Software e automação empresarial</small>
+    </div>
+    <div>
+      <small>WhatsApp / Telefone: <b style="color:#fff">(79) 99835-8788</b></small>
+      <small>E-mail: <a href="mailto:gomes.renan549@gmail.com">gomes.renan549@gmail.com</a></small>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var WHATS = '5579998358788';
+  var EMAIL = 'gomes.renan549@gmail.com';
+  var form = document.getElementById('form');
+  var msg = document.getElementById('formMsg');
+  var cnpj = form.cnpj;
+
+  // máscara de CNPJ
+  cnpj.addEventListener('input', function(){
+    var d = cnpj.value.replace(/\D/g,'').slice(0,14);
+    var out = d;
+    if(d.length>2) out = d.slice(0,2)+'.'+d.slice(2);
+    if(d.length>5) out = d.slice(0,2)+'.'+d.slice(2,5)+'.'+d.slice(5);
+    if(d.length>8) out = d.slice(0,2)+'.'+d.slice(2,5)+'.'+d.slice(5,8)+'/'+d.slice(8);
+    if(d.length>12) out = d.slice(0,2)+'.'+d.slice(2,5)+'.'+d.slice(5,8)+'/'+d.slice(8,12)+'-'+d.slice(12);
+    cnpj.value = out;
+  });
+
+  function digits(v){ return String(v||'').replace(/\D/g,''); }
+  function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v||'').trim()); }
+
+  function validate(){
+    var errs = [];
+    [['fantasia','Nome fantasia'],['responsavel','Responsável'],['cidade','Cidade']].forEach(function(f){
+      if(!form[f[0]].value.trim()) errs.push([form[f[0]], f[1]+' é obrigatório.']);
+    });
+    if(!form.uf.value) errs.push([form.uf, 'Selecione a UF.']);
+    if(digits(form.cnpj.value).length !== 14) errs.push([form.cnpj, 'CNPJ deve ter 14 dígitos.']);
+    if(!digits(form.whatsapp.value)) errs.push([form.whatsapp, 'Informe o WhatsApp.']);
+    if(!validEmail(form.email.value)) errs.push([form.email, 'Informe um e-mail válido.']);
+    if(!form.aceite.checked) errs.push([form.aceite, 'É necessário aceitar o termo do piloto.']);
+
+    // limpa marcações
+    form.querySelectorAll('.invalid').forEach(function(el){ el.classList.remove('invalid'); });
+    errs.forEach(function(e){ if(e[0].classList) e[0].classList.add('invalid'); });
+    return errs;
+  }
+
+  function montarTexto(){
+    var f = form;
+    function g(n){ return (f[n] && f[n].value ? f[n].value : '').trim(); }
+    var L = [
+      'Cadastro RGA ERP Material de Construção',
+      '',
+      'LOJA',
+      'Nome fantasia: '+g('fantasia'),
+      'Razão social: '+(g('razao')||'-'),
+      'CNPJ: '+g('cnpj'),
+      'Inscrição Estadual: '+(g('ie')||'-'),
+      'Cidade/UF: '+g('cidade')+'/'+g('uf'),
+      'Endereço: '+(g('endereco')||'-'),
+      '',
+      'RESPONSÁVEL',
+      'Nome: '+g('responsavel'),
+      'WhatsApp: '+g('whatsapp'),
+      'E-mail: '+g('email'),
+      '',
+      'OPERAÇÃO',
+      'Segmento: '+g('segmento'),
+      'Qtd. produtos: '+g('qtd_produtos'),
+      'Caixas/PCs: '+(g('caixas')||'-'),
+      'Leitor de código: '+g('leitor'),
+      'Impressora térmica: '+g('impressora'),
+      'Importar planilha: '+g('importar'),
+      '',
+      'FISCAL (futuro)',
+      'Quer NFC-e: '+g('quer_nfce'),
+      'Tem certificado A1: '+g('tem_a1'),
+      'Tem CSC/Token: '+g('tem_csc'),
+      'Tem contador: '+g('tem_contador'),
+      'Contador: '+(g('contador')||'-'),
+      '',
+      'Aceite do piloto (comprovante não fiscal): SIM'
+    ];
+    return L.join('\n');
+  }
+
+  function showErr(errs){
+    msg.className = 'form-msg err';
+    msg.textContent = errs[0][1] + (errs.length>1 ? ' (e mais '+(errs.length-1)+' campo(s) a corrigir)' : '');
+    errs[0][0].focus && errs[0][0].focus();
+  }
+
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var errs = validate();
+    if(errs.length){ showErr(errs); return; }
+    var texto = montarTexto();
+    window.open('https://wa.me/'+WHATS+'?text='+encodeURIComponent(texto), '_blank', 'noopener');
+    msg.className = 'form-msg ok';
+    msg.textContent = 'Abrimos o WhatsApp com seus dados. Confirme o envio na conversa. Você também pode usar "Enviar por e-mail".';
+  });
+
+  document.getElementById('byEmail').addEventListener('click', function(){
+    var errs = validate();
+    if(errs.length){ showErr(errs); return; }
+    var texto = montarTexto();
+    var subject = 'Cadastro ERP Material - ' + (form.fantasia.value.trim() || 'loja');
+    window.location.href = 'mailto:'+EMAIL+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(texto);
+    msg.className = 'form-msg ok';
+    msg.textContent = 'Abrimos seu aplicativo de e-mail com os dados preenchidos.';
+  });
+})();
+</script>
+</body>
+</html>
